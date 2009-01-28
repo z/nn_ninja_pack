@@ -1,0 +1,102 @@
+~+-==========================================================================-+~
+ || Ninja Pack v1.1 | Last Updated 10/14/08 | A Product of the Nexuiz Ninjaz ||
+~+-==========================================================================-+~
+ |                                                                            |
+ |               <~-.'q[ www . Nexuiz Ninjaz . com ]p'.-~>                    |
+ |                                                                            |
+ |  Conception and Execution by         | Clever Scripts                      |
+ |                 Tyler "-z-" Mulligan |                        AceOfThumbs  |
+ |                                                                            |
+ |  Inspiration and motivation                                                |
+ |       XenoTheBlind, mkzelda and Dokujisan as well as the many ninjaz       |
+ |                                                                            |
+ |                   <~-.'q[ Welcome to the Dojo ]p'.-~>                      |
+ |                                                                            |
+~+-==========================================================================-+-~
+
+== Introduction ==
+
+= What Is It? =
+The ninja pack is a simple no risk, drop-in solution for getting your Nexuiz configured like a ninja. The ninja pack breaks down useful configuration scripts into a logical framework. This giving you an out of the box solution with advanced configuration options in a module based system.
+
+
+= What does it offer? =
+
+Demo Management - Take advantage of Nexuiz's built in demo review/recording features with loadable keybinds
+Weapon Mangement - Utilizing the Nexuiz 'bestweapon' function which allows weapon fallbacks, this pack has broken down the weapon management into logical divisions of use.
+Team Messages - Enhanced defaults and mousewheel messages
+Variable FOV - Change your field of view with your mousewheel
+HUD ehancements - An enhanced HUD, netgraph, fps and speedometer
+Very Customizable - Your current binds will run on top of it! If you already use 'autoexec.cfg', just rename it to 'personal_binds.cfg" and it will take priority over the ninja pack keybinds / scripts.
+
+
+== To Install/Uninstall ==
+note: The ninja pack uses an autoexec.cfg file. If you already have an autoexec.cfg, please rename it to 'personal_binds.cfg' so they will automagically run. 'personal_binds.cfg' has priority over the ninja binds.
+
+= Install =
+1. Backup your 'config.cfg' located in your Nexuiz data directory.
+2. Download the ninja pack to your Nexuiz data directory.
+
+= Uninstall =
+1. Replace 'config.cfg' with your backup
+2. Move or remove the ninja pack pk3
+
+== Keybinds ==
+
+There is a graphic of the keybinds included in this pack and an updated version here: http://www.nexuizninjaz.com/toolz/keyboard/
+
+== To Configure ==
+
+= Basic =
+In game, you can change the settings for the following 4 functions by going to the 'input tab' in the 'settings window'. Their respective defaults are listed.
+
+Message Menu - Mouse 5
+Quick Zoom - Mouse 3 (mouse wheel click)
+Adjust FOV - z
+Default FOV - x
+
+The default config assumes you have a 5 button mouse, so if you don't, you'll probably want to change your 'Message Menu' key.
+
+= Intermediate =
+
+For general Nexuiz configuration and weapon binds, drag your nn_conf.cfg out of the pack into your Nexuiz data directory and edit that.
+
+= Advanced =
+
+autoexec.cfg - the 'boot' file
+autoexec.cfg is a file Nexuiz calls on startup. This file is used to call the 'startup' file of the ninja pack, 'nn_startup'.
+
+nn_startup.cfg - the 'startup' file
+This is used to launch other cfg files in the pack. If you make a module you'd like to contain in your pack, you should call it from this file.
+
+nn_aliases.cfg - the 'make things purdy' file
+Global aliases for player statistic variables matched with waypoints etc can be found here.
+
+nn_aot_zoom.cfg - AceOfThumbs' variable zoom script
+This is a script created by AceOfThumbs that allows you to change your FOV (field of view) by holding a key (z) and using your mousewheel to zoom in and out. It's really neat! You can adjust sensitivity and fov's in nn_conf.cfg
+
+nn_conf.cfg - the 'general nexuiz configuration' file
+This file contains general nexuiz tweaks and sensitivity / fov settings for AoT's zoom script.
+
+nn_ctf_messages.cfg - mousewheel message script
+These messages were generated with AoT's Mouse Wheel Message tool found at http://training.nexuizninjaz.com. You can create your own mousewheel messages and add them to the pack by copying the generated code. If you choose to do this, you should load your new config through nn_startup.cfg.
+
+Note: The keybinds for this script are technically in the nn_keybinds.cfg file but you should edit them in-game because the 'nn_install.cfg file will make them inaccessible otherwise.
+
+nn_install.cfg - the 'user-defined binds ala gui' file
+This file ensures that changes to your in-game user defined keybinds won't get overwritten on the next startup. See file for details.
+
+nn_keybinds.cfg - the 'keybind' file
+Keybind as detailed by the diagram, minus the button loaded configs and the demo recording keybinds are defined here.
+
+nn_userbind_defaults.cfg - just in case?
+In case you feel like your userbinds got messed up and you want the nexuiz defaults, just load this config.
+
+nn_userbind_ninjafied.cfg - Default numpad keybind enhancements
+These have been improved with colors to help your teammates better identify the information you're trying to pass to them. If you prefer the uncolored ones, they have been included as 'nn_userbind_defaults.cfg' which you can load by replacing 'nn_userbind_ninjafied.cfg' @ line 71 in 'nn_keybinds.cfg'
+
+nn_video.cfg - demo playback and recording binds
+This is a seperate file to allow it to be called by a button press.
+
+personal_binds.cfg - the 'new autoexec.cfg
+This file acts as the new 'onload' for Nexuiz. Put your custom binds in this file.
